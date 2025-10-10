@@ -12,15 +12,15 @@ This is where I practice, make mistakes, and grow through experimentation.
 
 ## Areas of Study
 
-Smart contract structure and security
+- Smart contract structure and security
 
-Common ERC standards (ERC-20, ERC-721, ERC-1155)
+- Common ERC standards (ERC-20, ERC-721, ERC-1155)
 
-Gas optimization and best practices
+- Gas optimization and best practices
 
-Interactions between contracts and Web3 integrations
+- Interactions between contracts and Web3 integrations
 
-DeFi concepts and automation
+- DeFi concepts and automation
 
 ## About Me
 
