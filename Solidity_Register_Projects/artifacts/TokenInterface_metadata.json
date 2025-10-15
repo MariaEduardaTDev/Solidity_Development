@@ -1,0 +1,77 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "mint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"mint(address,uint256)": {
+					"notice": "Chamando somente a função \"mint\" da interface"
+				}
+			},
+			"notice": "Interface preparada para ler as funções do Data feeds",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"TokenShop.sol": "TokenInterface"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol": {
+			"keccak256": "0xfe4e8bb4861bb3860ba890ab91a3b818ec66e5a8f544fb608cfcb73f433472cd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://644cff84052e1e82b5bb502b2a46e8f142a62b0db4cd9b38200798ba8373c6f7",
+				"dweb:/ipfs/QmTa99QHrJBn3SXDizquPBUiTxVCNKQrHgaWJhuds5Sce2"
+			]
+		},
+		"TokenShop.sol": {
+			"keccak256": "0x9d901817d406070965b32a9cabbc9c8cb1785dadcd2e6b6aa2c0e97f663c71b3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://40399dfe96a33e6e7a031801f23079b051b1e2ef397bd037c7ae25b76f4a0e58",
+				"dweb:/ipfs/QmT1Fa77ShWLUnCU31wcuVJBRtQNyBpaREw53d8WVoNZNS"
+			]
+		}
+	},
+	"version": 1
+}
