@@ -1,0 +1,96 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "sourceId",
+						"type": "uint256"
+					}
+				],
+				"name": "mintFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"CrossDestinationMinter.sol": "InftMinter"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@chainlink/contracts-ccip@1.6.1/contracts/applications/CCIPReceiver.sol": {
+			"keccak256": "0xe810d3a169ec44aba8900f92e45a7f820f3ca59a449b8d06368af3e3ed081838",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b255d41ecbf0904d2fea17ab3287ef2d31d1a07d2c80d84265a254f5178f5fdd",
+				"dweb:/ipfs/QmUWZpqCNrrS7qmBWHGvF6vaxhWgJw1PzWCdDi27YqtLmr"
+			]
+		},
+		"@chainlink/contracts-ccip@1.6.1/contracts/interfaces/IAny2EVMMessageReceiver.sol": {
+			"keccak256": "0x8f67554db88baee2d8facee3320fb85fd566f843b9e4bdb6870eafe1637d7919",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4fb75a68a7a53c0d2d444f996b60b77f329c6e25e96d695f6b6219eb92baebc5",
+				"dweb:/ipfs/QmWCaGFSHSx17TgDou3EX2yuofPQnmkiuGX3isUmfHe3mb"
+			]
+		},
+		"@chainlink/contracts-ccip@1.6.1/contracts/libraries/Client.sol": {
+			"keccak256": "0x7c736e12ebb1d0e3a0c99436eacfac14d16ec941843050c9a7d82a6bff5b35a1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7cf3e0bbece35e0d1936225535b5ea91e63e45ad363d61fbec8423a53e96f6e5",
+				"dweb:/ipfs/QmTMtUJcUGuMmLVMJ6PVTAWNatf9R77Cq6mzdDtFMUVB6h"
+			]
+		},
+		"@chainlink/contracts/src/v0.8/vendor/openzeppelin-solidity/v5.0.2/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x4296879f55019b23e135000eb36896057e7101fb7fb859c5ef690cf14643757b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://87b3541437c8c443ccd36795e56a338ed12855eec17f8da624511b8d1a7e14df",
+				"dweb:/ipfs/QmeJQCtZrQjtJLr6u7ZHWeH3pBnjtLWzvRrKViAi7UZqxL"
+			]
+		},
+		"CrossDestinationMinter.sol": {
+			"keccak256": "0x5c9d0ca1bc5b55955baef68f5d5acc7ab83e389c1f5b84a75b892208b2fdd289",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://64650d9666886d5ba388e6fa737730fadb99fd3a76fc95adb30270f8f6f4561a",
+				"dweb:/ipfs/QmPVBau3gXG9nACLWN8TPx4z7rcynTXZDfkB1sVSTcSKGr"
+			]
+		}
+	},
+	"version": 1
+}
