@@ -1,0 +1,379 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_bankCap",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_perTxLimit",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "requested",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "available",
+						"type": "uint256"
+					}
+				],
+				"name": "ExceedsBankCap",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "requested",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "limit",
+						"type": "uint256"
+					}
+				],
+				"name": "ExceedsPerTxLimit",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "requested",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					}
+				],
+				"name": "InsufficientBalance",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidInitParams",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "TransferFailed",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ZeroValueNotAllowed",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newBalance",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newBalance",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdrawal",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "bankCap",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "getCounts",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "deposits",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "withdraws",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "perTxLimit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalDeposits",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_bankCap": "total allowed deposits at deployment (in wei)",
+						"_perTxLimit": "max allowed withdraw per transaction (wei)"
+					}
+				},
+				"deposit()": {
+					"details": "Reverts with ExceedsBankCap if bank would exceed cap"
+				},
+				"withdraw(uint256)": {
+					"details": "Uses checks-effects-interactions and safe call transfer",
+					"params": {
+						"amount": "in wei to withdraw"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"errors": {
+				"ExceedsBankCap(uint256,uint256)": [
+					{
+						"notice": "Reverted when a deposit would exceed the global bank cap"
+					}
+				],
+				"ExceedsPerTxLimit(uint256,uint256)": [
+					{
+						"notice": "Reverted when a withdraw amount exceeds the per-transaction limit "
+					}
+				],
+				"InsufficientBalance(address,uint256,uint256)": [
+					{
+						"notice": "Reverted when an account attempts to withdraw more than its balance"
+					}
+				],
+				"InvalidInitParams()": [
+					{
+						"notice": "Reverted when constructor parameters are invalid"
+					}
+				],
+				"TransferFailed(address,uint256)": [
+					{
+						"notice": "Reverted when a native transfer {to} fails"
+					}
+				],
+				"ZeroValueNotAllowed()": [
+					{
+						"notice": "Reverted when a zero value is used where not allowed"
+					}
+				]
+			},
+			"events": {
+				"Deposit(address,uint256,uint256)": {
+					"notice": "Emitted when a user deposits ETH"
+				},
+				"Withdrawal(address,uint256,uint256)": {
+					"notice": "Emitted when a user withdraws ETH"
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"bankCap()": {
+					"notice": "Global cap for total deposits to the bank (immutable)"
+				},
+				"deposit()": {
+					"notice": "Deposit native ETH into your personal vault"
+				},
+				"getBalance(address)": {
+					"notice": "Returns the balance of 'account' in wei"
+				},
+				"getCounts(address)": {
+					"notice": "Returns deposit and withdraw counts for an account"
+				},
+				"perTxLimit()": {
+					"notice": "Withdraw limit per transaction for users (immutable)"
+				},
+				"totalDeposits()": {
+					"notice": "Total deposits currently held in contract (in wei)"
+				},
+				"withdraw(uint256)": {
+					"notice": "Withdraw up to perTxLimit from your vault"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"kipu-bank/contracts/KipuBank1.sol": "KipuBank"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"kipu-bank/contracts/KipuBank1.sol": {
+			"keccak256": "0x47c4327d60085624679072e5fc2b9f3b122ceef9689169a56d1aa7b857afb9a3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3c6cf7ec8cf03eb44c038bac33e61d92aac3d0897df5af387bce72199d87f83a",
+				"dweb:/ipfs/QmPVzR9MjiBPiQgXpjugXt6yYvmDBaYo3Pewr7CyZojg8K"
+			]
+		}
+	},
+	"version": 1
+}
