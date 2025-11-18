@@ -24,6 +24,10 @@ error ZeroValueNotAllowed();
 /// @notice Reverted when constructor parameters are invalid
 error InvalidInitParams();
 
+/// @notice Reverted when calls with calldata to prevent accidental deposits
+error FallbackNotAllowed();
+
+
 contract KipuBank {
     /// @notice Global cap for total deposits to the bank (immutable)
     uint256 public immutable bankCap;
@@ -88,9 +92,10 @@ contract KipuBank {
         _handleDeposit(msg.sender, msg.value);
     }
 
+
+    /// @dev Only the receive() function should accept ETH transfers. This function always reverts
     fallback() external payable {
-        // optionally accept fallback as deposit as well
-        _handleDeposit(msg.sender, msg.value); 
+         revert FallbackNotAllowed();
     }
 
     // Withdrawals:
@@ -118,7 +123,7 @@ contract KipuBank {
 
     /// @dev Internal safe send using call, reverts with TransferFailed on error
     function _safeSend(address payable to, uint256 amount) private {
-        (bool success, ) = to.call{value: amount} ("");
+        (bool success, ) = to.call{value: amount}("");
         if (!success) revert TransferFailed(to, amount);
     }
 

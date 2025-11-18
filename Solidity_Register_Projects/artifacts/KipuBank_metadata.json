@@ -54,6 +54,11 @@
 				"type": "error"
 			},
 			{
+				"inputs": [],
+				"name": "FallbackNotAllowed",
+				"type": "error"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -294,6 +299,11 @@
 						"notice": "Reverted when a withdraw amount exceeds the per-transaction limit "
 					}
 				],
+				"FallbackNotAllowed()": [
+					{
+						"notice": "Reverted when calls with calldata to prevent accidental deposits"
+					}
+				],
 				"InsufficientBalance(address,uint256,uint256)": [
 					{
 						"notice": "Reverted when an account attempts to withdraw more than its balance"
@@ -367,11 +377,11 @@
 	},
 	"sources": {
 		"kipu-bank/contracts/KipuBank.sol": {
-			"keccak256": "0x47c4327d60085624679072e5fc2b9f3b122ceef9689169a56d1aa7b857afb9a3",
+			"keccak256": "0xeb7a0a3c86d5286b6ef3c04ae21c027794297fffb6c7b3b77393551ae04b1995",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3c6cf7ec8cf03eb44c038bac33e61d92aac3d0897df5af387bce72199d87f83a",
-				"dweb:/ipfs/QmPVzR9MjiBPiQgXpjugXt6yYvmDBaYo3Pewr7CyZojg8K"
+				"bzz-raw://562c65aa5bd15b4d43981281e8a7cf5287e15b72493fb1c06a1ac1d62ca1fc53",
+				"dweb:/ipfs/QmRiRFWLZxzfvAp6rGUrkA2jHMSFec6ZerXdN5TbhaHk7E"
 			]
 		}
 	},
