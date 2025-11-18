@@ -1,6 +1,6 @@
 {
   "name": "KipuBank",
-  "address": "0xebcb4f326048caa81e30025fe01c00b24a01ca6f",
+  "address": "0x33fe29ff602cad6e834b5dfaf305a5ed9f18189d",
   "abi": [
     {
       "inputs": [],
@@ -264,5 +264,5 @@
     }
   ],
   "filePath": "electron/kipu-bank/contracts/KipuBank.sol",
-  "pinnedAt": 1763425040158
+  "pinnedAt": 1763426704556
 }

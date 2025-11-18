@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.30+commit.73712a01"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
@@ -364,7 +364,7 @@
 		"compilationTarget": {
 			"kipu-bank/contracts/KipuBank.sol": "KipuBank"
 		},
-		"evmVersion": "prague",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -377,11 +377,11 @@
 	},
 	"sources": {
 		"kipu-bank/contracts/KipuBank.sol": {
-			"keccak256": "0xeb7a0a3c86d5286b6ef3c04ae21c027794297fffb6c7b3b77393551ae04b1995",
+			"keccak256": "0x35f8981b6a779b00ec61d16eee4089c06ad2823b444a8f06f023976dd1f897a6",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://562c65aa5bd15b4d43981281e8a7cf5287e15b72493fb1c06a1ac1d62ca1fc53",
-				"dweb:/ipfs/QmRiRFWLZxzfvAp6rGUrkA2jHMSFec6ZerXdN5TbhaHk7E"
+				"bzz-raw://437cd9ac5795f66c8bad7aa9c2b0a4ccce257518314be59c0c2013539387624d",
+				"dweb:/ipfs/QmekR2ViJqf8EvgzwM4EQsbeL4ByTinAKvrGT2ckwcxFvb"
 			]
 		}
 	},

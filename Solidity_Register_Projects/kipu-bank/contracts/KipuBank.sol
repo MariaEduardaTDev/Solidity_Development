@@ -29,6 +29,13 @@ error FallbackNotAllowed();
 
 
 contract KipuBank {
+    /// @notice Ensures an amount greater than zero is provided
+    /// @dev Use this to replace all "if(amount == 0)" checks
+    modifier nonZero(uint256 amount) {     // <<< ADD
+        if (amount == 0) revert ZeroValueNotAllowed();
+        _;
+    } 
+
     /// @notice Global cap for total deposits to the bank (immutable)
     uint256 public immutable bankCap;
 
@@ -65,14 +72,12 @@ contract KipuBank {
     // Deposits:
     /// @notice Deposit native ETH into your personal vault
     /// @dev Reverts with ExceedsBankCap if bank would exceed cap
-    function deposit() external payable {
+    function deposit() external payable nonZero(msg.value){
         _handleDeposit(msg.sender, msg.value);
     }
 
     /// @dev Internal shared deposit handler used by deposit() and receive()
     function _handleDeposit(address from, uint256 amount) private {
-        if(amount == 0) revert ZeroValueNotAllowed();
-
         // checks
         uint256 newTotal = totalDeposits + amount;
         if (newTotal > bankCap) revert ExceedsBankCap(amount, bankCap - totalDeposits);
@@ -88,7 +93,7 @@ contract KipuBank {
 
     /// @notice Accept plain ETH transfers as deposits
     /// @dev forwards to internal deposit handler so that direct sends follow same rules
-    receive() external payable {
+    receive() external payable nonZero(msg.value) {
         _handleDeposit(msg.sender, msg.value);
     }
 
@@ -103,8 +108,7 @@ contract KipuBank {
     /// @notice Withdraw up to perTxLimit from your vault
     /// @param amount in wei to withdraw
     /// @dev Uses checks-effects-interactions and safe call transfer
-    function withdraw(uint256 amount) external {
-        if(amount == 0) revert ZeroValueNotAllowed();
+    function withdraw(uint256 amount) external nonZero(amount) {
         if(amount > perTxLimit) revert ExceedsPerTxLimit(amount, perTxLimit);
 
         uint256 bal = balances[msg.sender];
