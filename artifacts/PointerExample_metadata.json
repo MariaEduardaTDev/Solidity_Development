@@ -1,0 +1,85 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getStorageArray",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "manipulateArray",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "storageArray",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Solidity_Register_Projects/Reinforcement/PointerExemlo.sol": "PointerExample"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Solidity_Register_Projects/Reinforcement/PointerExemlo.sol": {
+			"keccak256": "0x3fadedffabfbffdbe55f8db281c5e809ed02d1ddff4db5c26506e8e63bce7b08",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d8e215c9f925f1065028b39f1a08d9689ef174d71229102bb3dc7388abd085b8",
+				"dweb:/ipfs/QmYoKRES9j6wBzNJniHEmCv74LPr39h6k95Aie9JMRHvhH"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,10 @@
+{
+  "Solidity_Register_Projects/Reinforcement/PointerExemlo.sol": {
+    "__sources__": {
+      "Solidity_Register_Projects/Reinforcement/PointerExemlo.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract PointerExample {\r\n\r\n    // Declarando uma Array no storage (memória permanente na blockchain) \r\n    uint256[] public storageArray = [2,3,4];\r\n\r\n    function manipulateArray() public {\r\n\r\n        // Criando um ponteiro da array original\r\n        uint256[] storage storageArrayPointer = storageArray;\r\n\r\n        // Modificando o valor armazenado no índice 0 na array original por 100\r\n        storageArrayPointer[0] = 100;\r\n\r\n        // Criando uma variável que armazena a cópia do valor da array original\r\n        uint256[] memory storageArrayCopy = storageArray;\r\n\r\n        // Modifica o valor somente na memória, não altera a array original\r\n        storageArrayCopy[1] = 46;\r\n    }\r\n\r\n    function getStorageArray() public view returns (uint256[] memory) {\r\n        return storageArray;\r\n    }\r\n\r\n}",
+        "file": "Solidity_Register_Projects/Reinforcement/PointerExemlo.sol"
+      }
+    }
+  }
+}
